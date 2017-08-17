@@ -1,0 +1,13 @@
+<view class="wrap">
+  <view class="inputlist">
+    <input bindinput="changeInput" placeholder="请输入文字" type='text' value="{{val}}" />
+    <button size="mini" type="primary" bindtap="addmsg">留言</button>
+  </view>
+  <text class="ishavemsg" wx:if="{{msglist.length==0}}">暂无留言。。。。</text>
+  <view class="msglist_ctx">
+    <view wx:for="{{msglist}}" class="msg" wx:key="index">
+        <text>{{item}}</text>
+        <icon data-index="{{index}}" bindtap="deletemsg" type="clear" />
+    </view>
+  </view>
+</view>
